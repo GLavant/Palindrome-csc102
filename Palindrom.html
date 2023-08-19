@@ -1,0 +1,35 @@
+<!--Giovanni LaVant-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        label{
+            color: purple;
+        
+        }
+    </style>
+</head>
+<body>                                                                                                                                                                                                                                                                                                                                                                                              
+        <!--<label> for input and <button> to run function-->
+     <label id="String_Check"> enter a word:</label>&nbsp;&nbsp;<input id="input_String" type="text" style="width:100px"/><br/>
+    <button id="run_code_btn" onclick="checkPalindrome()" style ="background-color: bisque;"> Run Palindrome Checker</button>
+    <script>
+        //.replace() to remove any non-alphanumeric characters from the input string
+        function checkPalindrome(){
+            const String_Check = document.getElementById("input_String").value;
+            const cleanStr = String_Check.toLowerCase().replace(/[^a-z0-9]/g,'');       
+
+            const isPalindrome = cleanStr === cleanStr.split('').reverse().join('');
+            //alert("...") to alert the user if a palindrom or not
+            if(isPalindrome) {
+                alert(String_Check + " is a Palindrome");
+            }else{
+                alert(String_Check + " is not a Palindrome");
+            }
+        }
+    </script>
+</body>
+</html>
